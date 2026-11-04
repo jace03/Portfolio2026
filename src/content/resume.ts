@@ -2,6 +2,8 @@
 
 export interface Contact {
   name: string;
+  location: string;
+  nationality: string;
   linkedin: string;
 }
 
@@ -14,10 +16,13 @@ export interface Project {
 
 export interface Experience {
   company: string;
-  url: string;
+  title?: string;
+  url?: string;
   startYear: number;
+  startMonth?: number;
   endYear: number | null;
   summary: string;
+  highlights?: string[];
   projects: Project[];
 }
 
@@ -48,10 +53,13 @@ export interface Resume {
 export const resume: Resume = {
   contact: {
     name: "Jace Jahraus",
+    location: "Sunshine Coast, Queensland, Australia",
+    nationality: "Canadian",
     linkedin: "https://www.linkedin.com/in/jace-jahraus-019347145",
   },
 
-  careerObjective: "Full Time Employment",
+  careerObjective:
+    "Full-time hybrid role on the Sunshine Coast, or a remote role with a Brisbane-based team.",
 
   profile:
     "I have a passion and eagerness for learning new skills and techniques. I possess time management skills " +
@@ -59,12 +67,20 @@ export const resume: Resume = {
     "assist me in working well with teams as well as individually.",
 
   skills: [
+    "React",
+    "TypeScript",
     "HTML",
     "CSS",
     "JavaScript",
     "jQuery",
     "PHP",
+    "Eloquent ORM",
+    "Doctrine ORM",
     "SQL",
+    "AI-assisted development",
+    "Jira",
+    "GitHub",
+    "Confluence",
     "Agile",
     "Bootstrap",
     "Scrum",
@@ -74,13 +90,29 @@ export const resume: Resume = {
     "SEO",
     "C#",
     "Java",
-    "Swift",
-    "Android Development",
   ],
 
   experience: [
     {
+      company: "Flowlogic",
+      title: "Developer",
+      startYear: 2025,
+      startMonth: 9,
+      endYear: null,
+      summary:
+        "Full-stack developer in a fast-paced team working in two-week sprints, across a React/TypeScript " +
+        "frontend and a PHP backend.",
+      highlights: [
+        "Build frontend features in React and TypeScript.",
+        "Develop PHP backend features, learning the Eloquent and Doctrine ORMs on the job.",
+        "AI-assisted development: directing AI coding tools and reviewing the code they generate for correctness and quality.",
+        "Work in two-week Agile sprints using Jira, GitHub and Confluence.",
+      ],
+      projects: [],
+    },
+    {
       company: "Registry Connection",
+      title: "Junior Developer",
       url: "https://registryconnection.ca/",
       startYear: 2020,
       endYear: 2022,
@@ -152,11 +184,6 @@ export const resume: Resume = {
       location: "Calgary, Alberta",
       credential: "Certificate in Graphic Design Fast Track – Adobe",
       endYear: 2017,
-    },
-    {
-      institution: "Bentley High School",
-      credential: "High School Diploma",
-      endYear: 2007,
     },
   ],
 
